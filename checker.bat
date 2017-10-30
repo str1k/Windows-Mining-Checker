@@ -3,11 +3,12 @@ rem configuration
 SET /A GPU_NUM=1
 SET RESTART_TIME=120
 SET "servers=metaverse.farm:3333 metaverse.farm:8888"
+SET EXECUTE_FILE=start.bat
 
 echo checking internet connection
 FOR /L %%A IN (1,1,10) DO (
   ECHO %%A
-  Ping www.google.nl -n 1 -w 1000
+  Ping www.google.com -n 1 -w 1000
   cls
   if errorlevel 1 (
 	set internet=0
@@ -61,4 +62,4 @@ c:\windows\system32\shutdown -r -t %RESTART_TIME%
 
 rem Run miner by calling batch file
 :run_minner
-start.bat
+%EXECUTE_FILE%
