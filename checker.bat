@@ -2,7 +2,7 @@
 rem configuration
 SET /A GPU_NUM=1
 SET RESTART_TIME=120
-SET "servers=metaverse.farm:3333 metaverse.farm:8888"
+SET "servers=asia.zcoin.miningpoolhub.com:20581 asia.miningspeed.com:3072 asia1.ethermine.org:14444"
 SET EXECUTE_FILE=start.bat
 SET ONBOARD_GPU=1
 
