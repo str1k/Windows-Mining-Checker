@@ -19,8 +19,4 @@ if the number of active GPUs is less than the number of configured value the scr
 2) RESTART_TIME : time in second untill the script will restart PC
 3) servers : list of pool mining address (provide only addres and port without stratum+tcp)
 4) EXECUTE_FILE : name of the script that this script will run
-
-# IMPORTANT NOTE
-The script assume that user PC contains integrated graphic card (Onboard GPU), 
-and the creator remove number of GPU by one.
-#So if you do not have on-board graphic card you have to deduct number of GPU configuration by 1!
+5) ONBOARD_GPU : Set to 1 if you have onboard GPU, set to 0 if you dont have one

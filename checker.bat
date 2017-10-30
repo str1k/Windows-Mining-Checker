@@ -4,6 +4,7 @@ SET /A GPU_NUM=1
 SET RESTART_TIME=120
 SET "servers=metaverse.farm:3333 metaverse.farm:8888"
 SET EXECUTE_FILE=start.bat
+SET ONBOARD_GPU=1
 
 echo checking internet connection
 FOR /L %%A IN (1,1,10) DO (
@@ -46,10 +47,13 @@ goto :restart_PC
 :check_gpu
 echo %%a port !port!: OK
 SET /A CARDS=0
-for /F "tokens=* skip=1" %%n in ('WMIC path Win32_VideoController get Name ^| findstr "."') do set GPU_NAME=%%n
-SET /A CARDS+=1
+for /F "tokens=* skip=1" %%n in ('WMIC path Win32_VideoController get Name ^| findstr "."') do (
+	set GPU_NAME=%%n
+	SET /A CARDS+=1
+)
 echo %GPU_NAME%
-echo %CARDS%
+SET /A CARDS = CARDS - ONBOARD_GPU
+echo Detected %CARDS% Cards
 rem Check if all card existed
 if %CARDS% == %GPU_NUM% (
 	goto :run_minner
@@ -59,6 +63,7 @@ if %CARDS% == %GPU_NUM% (
 
 :restart_PC
 c:\windows\system32\shutdown -r -t %RESTART_TIME%
+goto :eof
 
 rem Run miner by calling batch file
 :run_minner
