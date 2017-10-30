@@ -21,6 +21,7 @@ FOR /L %%A IN (1,1,10) DO (
   echo %internet%
   timeout /t 5 /nobreak
 )
+goto :restart_PC
 
 :check_pool
 echo checking pool connection
