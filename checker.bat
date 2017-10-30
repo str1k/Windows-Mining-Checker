@@ -1,6 +1,7 @@
 @echo off
 rem configuration
-SET /A GPU_NUM=6
+SET /A GPU_NUM=1
+SET RESTART_TIME=120
 SET "servers=metaverse.farm:3333 metaverse.farm:8888"
 
 echo checking internet connection
@@ -28,7 +29,7 @@ for %%I in (%servers%) do (
         set "port=%%~b"
         if not defined port set "port=80"
         setlocal enabledelayedexpansion
-        C:\PortQryV2\PortQry.exe -n "%%~a" -e "!port!" >NUL 2>NUL && (
+        PortQry.exe -n "%%~a" -e "!port!" >NUL 2>NUL && (
             echo %%a port !port!: OK
 	    goto :check_gpu
         ) || (
@@ -56,7 +57,7 @@ if CARDS == GPU_NUM (
 )
 
 :restart_PC
-c:\windows\system32\shutdown -r -t 120
+c:\windows\system32\shutdown -r -t RESTART_TIME
 
 rem Run miner by calling batch file
 :run_minner
