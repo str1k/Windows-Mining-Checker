@@ -50,14 +50,14 @@ SET /A CARDS+=1
 echo %GPU_NAME%
 echo %CARDS%
 rem Check if all card existed
-if CARDS == GPU_NUM (
+if %CARDS% == %GPU_NUM% (
 	goto :run_minner
 ) else (
 	goto :restart_PC
 )
 
 :restart_PC
-c:\windows\system32\shutdown -r -t RESTART_TIME
+c:\windows\system32\shutdown -r -t %RESTART_TIME%
 
 rem Run miner by calling batch file
 :run_minner
