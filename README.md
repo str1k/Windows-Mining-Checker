@@ -20,3 +20,8 @@ if the number of active GPUs is less than the number of configured value the scr
 3) servers : list of pool mining address (provide only addres and port without stratum+tcp)
 4) EXECUTE_FILE : name of the script that this script will run
 5) ONBOARD_GPU : Set to 1 if you have onboard GPU, set to 0 if you dont have one
+
+#About
+Windows Batch script check connectivity of computer with internet access.
+Windows Batch script list all GPUs in the computer.
+Windows Batch script check connectivity to specific port / adress.
