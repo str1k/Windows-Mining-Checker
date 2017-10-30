@@ -30,3 +30,6 @@ Windows Batch script check connectivity to specific port / adress.
 1) PortQryV2 Microsoft's PortQryV2.exe, a command-line utility that you can use to help troubleshoot TCP/IP connectivity issues. 
 	Portqry.exe runs on Windows 2000-based computers.
 	https://www.microsoft.com/en-us/download/details.aspx?id=17148
+2) Checking Port/Address connectivity Batch Script: https://stackoverflow.com/questions/29526342/windows-batch-script-to-see-if-a-sequence-of-server-ports-is-open
+3) Checking Internet connectivity Batch Script: https://stackoverflow.com/questions/27589925/simple-batch-for-checking-internet-connectivity-and-setting-environment-variable
+4) List all GPUs with Windows Batch Script: https://superuser.com/questions/723506/get-the-video-card-model-via-command-line-in-windows
