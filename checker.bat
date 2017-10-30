@@ -66,7 +66,8 @@ if %CARDS% == %GPU_NUM% (
 )
 
 :restart_PC
-c:\windows\system32\shutdown -r -t %RESTART_TIME%
+timeout /t %RESTART_TIME% /nobreak
+c:\windows\system32\shutdown -r -t 00
 goto :eof
 
 rem Run miner by calling batch file
